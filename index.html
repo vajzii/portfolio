@@ -342,13 +342,11 @@
             width: 54px;
             height: 54px;
             border-radius: 50%;
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
+            object-fit: cover;
+            object-position: top;
             flex-shrink: 0;
             box-shadow: 0 0 22px rgba(168, 85, 247, 0.45);
+            border: 2px solid rgba(168, 85, 247, 0.4);
         }
 
         .profile-name {
@@ -714,8 +712,8 @@
                 </div>
                 <div class="sidebar-spacer"></div>
                 <div class="sidebar-label">links</div>
-                <div class="tab" onclick="window.open('https://github.com/vajzii','_blank')">
-                    <span class="tab-icon">⯑</span> GitHub
+                <div class="tab" onclick="window.open('https://gothaj.top','_blank')">
+                    <span class="tab-icon">🌐</span> gothaj.top
                 </div>
             </div>
 
@@ -729,7 +727,7 @@
                         <div class="panel-line"></div>
                     </div>
                     <div class="profile-top">
-                        <div class="avatar">⚡</div>
+                        <img class="avatar" src="img/avatar.gif" alt="avatar" />
                         <div>
                             <div class="profile-name">vajzii</div>
                             <div class="profile-role">Free-time Developer</div>
@@ -969,7 +967,7 @@
         <div class="statusbar" id="statusbar">
             <div class="sb-item"><div class="sb-dot"></div> vajzii.cfg</div>
             <div class="sb-sep"></div>
-            <div class="sb-item">Full-stack Developer</div>
+            <div class="sb-item">Free-time Developer</div>
             <div class="sb-item sb-right">&copy; 2026 vajzii</div>
         </div>
 
