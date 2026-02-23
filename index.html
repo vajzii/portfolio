@@ -1,303 +1,1056 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>vajzii — Developer Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
-<style>
-:root{
---p:#c4b5fd;
---p2:#a78bfa;
---p3:#7c3aed;
---b:#bfdbfe;
---b2:#93c5fd;
---b3:#3b82f6;
---gb:rgba(255,255,255,0.07);
---gbd:rgba(255,255,255,0.13);
---gbr:rgba(255,255,255,0.14);
---txt:#f0f0ff;
---m:rgba(220,215,255,0.58);
---r:15px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-font-family:'Inter',sans-serif;
-color:var(--txt);
-line-height:1.6;
-background:linear-gradient(135deg,#1a0533 0%,#0f1a4a 35%,#0a1628 65%,#1a0533 100%);
-background-attachment:fixed;
-overflow-x:hidden;
-}
-body::before{
-content:'';
-position:fixed;top:-20%;left:-10%;
-width:60vw;height:60vw;
-background:radial-gradient(circle,rgba(167,139,250,.18) 0%,transparent 65%);
-pointer-events:none;z-index:0;
-animation:orb 9s ease-in-out infinite;
-}
-body::after{
-content:'';
-position:fixed;bottom:-20%;right:-10%;
-width:55vw;height:55vw;
-background:radial-gradient(circle,rgba(147,197,253,.14) 0%,transparent 65%);
-pointer-events:none;z-index:0;
-animation:orb 11s ease-in-out infinite reverse;
-}
-@keyframes orb{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-28px) scale(1.04)}}
-nav{
-position:fixed;top:0;left:0;right:0;z-index:100;
-display:flex;justify-content:space-between;align-items:center;
-padding:1rem 7%;
-background:rgba(12,8,32,.6);
-backdrop-filter:blur(20px);
--webkit-backdrop-filter:blur(20px);
-border-bottom:1px solid rgba(255,255,255,.1);
-}
-.logo{
-font-family:'Fira Code',monospace;
-font-size:1.05rem;font-weight:500;
-background:linear-gradient(90deg,var(--p),var(--b));
--webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-nav ul{list-style:none;display:flex;gap:2rem}
-nav ul a{color:var(--m);text-decoration:none;font-size:.87rem;font-weight:500;transition:color .2s}
-nav ul a:hover{color:var(--txt)}
-section{position:relative;z-index:1;padding:6rem 8%}
-.lbl{
-font-family:'Fira Code',monospace;font-size:.8rem;
-color:var(--p);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem;
-}
-.ttl{font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:700;letter-spacing:-.02em;margin-bottom:.8rem}
-.sub{color:var(--m);max-width:540px;margin-bottom:2.5rem;font-size:.93rem}
-.g{
-background:var(--gb);
-border:1px solid rgba(255,255,255,.13);
-backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
-border-radius:var(--r);
-}
-.g:hover{background:var(--gbd);border-color:rgba(196,181,253,.3)}
-#hero{
-min-height:100vh;
-display:flex;flex-direction:column;
-justify-content:center;align-items:flex-start;
-}
-.htag{
-font-family:'Fira Code',monospace;font-size:.87rem;
-color:var(--b);margin-bottom:1rem;letter-spacing:.04em;
-}
-#hero h1{
-font-size:clamp(2.6rem,6vw,5rem);
-font-weight:800;line-height:1.08;letter-spacing:-.03em;margin-bottom:1.2rem;
-}
-.grad{
-background:linear-gradient(100deg,var(--p) 0%,var(--b2) 100%);
--webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-#hero p{font-size:1.08rem;color:var(--m);max-width:500px;margin-bottom:2rem}
-.brow{display:flex;gap:.9rem;flex-wrap:wrap}
-.btn{
-padding:.72rem 1.7rem;border-radius:10px;
-font-size:.88rem;font-weight:600;text-decoration:none;
-transition:all .22s;cursor:pointer;display:inline-block;
-}
-.bp{
-background:linear-gradient(135deg,var(--p3),var(--b3));
-color:#fff;border:none;
-box-shadow:0 4px 20px rgba(124,58,237,.35);
-}
-.bp:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(124,58,237,.5)}
-.bo{
-background:var(--gb);color:var(--txt);
-border:1px solid rgba(255,255,255,.13);
-backdrop-filter:blur(10px);
-}
-.bo:hover{border-color:var(--p);color:var(--p);transform:translateY(-2px)}
-.ag{
-display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;
-}
-.at p{color:var(--m);margin-bottom:.9rem;font-size:.93rem}
-.at p strong{color:var(--txt)}
-.sg{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.sc{
-padding:1.4rem;text-align:center;
-transition:all .22s;
-}
-.sc .n{
-font-size:1.85rem;font-weight:800;
-background:linear-gradient(90deg,var(--p),var(--b2));
--webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-.sc .l{font-size:.76rem;color:var(--m);margin-top:.2rem}
-.kg{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.2rem}
-.kc{padding:1.5rem;transition:all .22s}
-.kc h3{font-size:.93rem;font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:.55rem}
-.ic{font-size:1.2rem}
-.ts{display:flex;flex-wrap:wrap;gap:.45rem}
-.t{
-font-family:'Fira Code',monospace;font-size:.7rem;
-padding:.22rem .6rem;border-radius:6px;border:1px solid;
-}
-.tp{color:var(--p);background:rgba(196,181,253,.1);border-color:rgba(196,181,253,.22)}
-.tb{color:var(--b);background:rgba(147,197,253,.09);border-color:rgba(147,197,253,.2)}
-.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(295px,1fr));gap:1.3rem}
-.pc{
-padding:1.7rem;display:flex;flex-direction:column;
-transition:all .22s;
-}
-.pc:hover{transform:translateY(-5px)}
-.pt{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem}
-.pi{font-size:1.85rem}
-.pc h3{font-size:.98rem;font-weight:600;margin-bottom:.45rem}
-.pc p{color:var(--m);font-size:.87rem;flex-grow:1;margin-bottom:1.2rem}
-.ps{display:flex;flex-wrap:wrap;gap:.4rem}
-.ptg{
-font-family:'Fira Code',monospace;font-size:.68rem;
-color:var(--m);background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.09);
-padding:.18rem .5rem;border-radius:5px;
-}
-#contact{text-align:center}
-#contact .sub{margin:0 auto 2.5rem}
-.cr{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
-.cc{
-padding:.85rem 1.8rem;text-decoration:none;color:var(--txt);
-font-weight:500;font-size:.88rem;
-display:flex;align-items:center;gap:.6rem;
-transition:all .22s;
-}
-.cc:hover{color:var(--p);transform:translateY(-3px);border-color:rgba(196,181,253,.35)}
-footer{
-position:relative;z-index:1;
-border-top:1px solid rgba(255,255,255,.1);
-padding:1.8rem 8%;
-display:flex;justify-content:space-between;align-items:center;
-flex-wrap:wrap;gap:1rem;
-}
-footer p{color:var(--m);font-size:.8rem}
-.mono{font-family:'Fira Code',monospace;color:var(--p)}
-@media(max-width:768px){
-nav ul{display:none}
-section{padding:4.5rem 5%}
-.ag{grid-template-columns:1fr}
-footer{flex-direction:column;text-align:center}
-}
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vajzii — Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+
+        /* ========== RESET & VARIABLES ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg:            #04040a;
+            --menu-bg:       #0c0c18;
+            --sidebar-bg:    #08080f;
+            --border:        rgba(160, 80, 220, 0.28);
+            --border-soft:   rgba(160, 80, 220, 0.13);
+            --purple:        #a855f7;
+            --purple-dim:    rgba(168, 85, 247, 0.65);
+            --pink:          #d946a8;
+            --gradient:      linear-gradient(135deg, #a855f7, #d946a8);
+            --text:          #ede8f7;
+            --muted:         #6b5d7e;
+            --hover-bg:      rgba(168, 85, 247, 0.08);
+            --active-bg:     rgba(168, 85, 247, 0.16);
+            --item-bg:       rgba(255, 255, 255, 0.025);
+            --glow:          0 0 40px rgba(168, 85, 247, 0.18), 0 0 80px rgba(168, 85, 247, 0.08);
+            --radius:        8px;
+        }
+
+        body {
+            background: var(--bg);
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            overflow: hidden;
+            user-select: none;
+        }
+
+
+        /* ========== BACKGROUND EFFECTS ========== */
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(168, 85, 247, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(168, 85, 247, 0.04) 1px, transparent 1px);
+            background-size: 44px 44px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-orb-1 {
+            position: fixed;
+            width: 650px;
+            height: 650px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.09) 0%, transparent 70%);
+            top: -220px;
+            right: -120px;
+            pointer-events: none;
+            z-index: 0;
+            animation: drift 10s ease-in-out infinite;
+        }
+
+        .bg-orb-2 {
+            position: fixed;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(217, 70, 168, 0.07) 0%, transparent 70%);
+            bottom: -120px;
+            left: -80px;
+            pointer-events: none;
+            z-index: 0;
+            animation: drift 13s ease-in-out infinite reverse;
+        }
+
+        @keyframes drift {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(-25px); }
+        }
+
+        .bg-watermark {
+            position: fixed;
+            bottom: 18px;
+            right: 18px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.68rem;
+            color: rgba(168, 85, 247, 0.18);
+            letter-spacing: 0.1em;
+            z-index: 0;
+        }
+
+
+        /* ========== MENU WINDOW ========== */
+        .menu {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 760px;
+            height: 510px;
+            background: var(--menu-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--glow), 0 24px 64px rgba(0, 0, 0, 0.85);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: height 0.22s ease;
+        }
+
+        .menu.collapsed {
+            height: 42px;
+        }
+
+
+        /* ========== TITLE BAR ========== */
+        .titlebar {
+            height: 42px;
+            background: linear-gradient(90deg, #0a0616 0%, #130920 100%);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            gap: 10px;
+            cursor: grab;
+            flex-shrink: 0;
+        }
+
+        .titlebar:active {
+            cursor: grabbing;
+        }
+
+        .title-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gradient);
+            box-shadow: 0 0 10px rgba(168, 85, 247, 0.9);
+            flex-shrink: 0;
+        }
+
+        .title-name {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.82rem;
+            font-weight: 600;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.05em;
+        }
+
+        .title-version {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.67rem;
+            color: var(--muted);
+            margin-right: auto;
+        }
+
+        .title-status {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.7rem;
+            color: #4ade80;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #4ade80;
+            box-shadow: 0 0 7px #4ade80;
+            animation: blink 2.2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50%       { opacity: 0.35; }
+        }
+
+        .win-btns {
+            display: flex;
+            gap: 5px;
+            margin-left: 10px;
+        }
+
+        .win-btn {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--muted);
+            font-size: 0.75rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .win-btn:hover {
+            background: var(--hover-bg);
+            color: var(--text);
+            border-color: var(--purple-dim);
+        }
+
+
+        /* ========== MENU BODY ========== */
+        .menu-body {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+
+        /* ========== SIDEBAR ========== */
+        .sidebar {
+            width: 175px;
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border-soft);
+            padding: 10px 0;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-label {
+            padding: 7px 14px 4px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.61rem;
+            color: var(--muted);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .tab {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 9px 14px;
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--muted);
+            transition: all 0.15s;
+            border-left: 2px solid transparent;
+            margin: 1px 0;
+        }
+
+        .tab:hover {
+            background: var(--hover-bg);
+            color: var(--text);
+        }
+
+        .tab.active {
+            background: var(--active-bg);
+            color: var(--text);
+            border-left-color: var(--purple);
+        }
+
+        .tab-icon {
+            font-size: 0.88rem;
+            width: 16px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .sidebar-spacer {
+            flex: 1;
+        }
+
+
+        /* ========== CONTENT AREA ========== */
+        .content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px 18px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border) transparent;
+        }
+
+        .content::-webkit-scrollbar       { width: 4px; }
+        .content::-webkit-scrollbar-track { background: transparent; }
+        .content::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+        .panel {
+            display: none;
+        }
+
+        .panel.active {
+            display: block;
+        }
+
+
+        /* ========== PANEL HEADER ========== */
+        .panel-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .panel-title {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.77rem;
+            font-weight: 600;
+            color: var(--purple);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .panel-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border-soft), transparent);
+        }
+
+
+        /* ========== PROFILE PANEL ========== */
+        .profile-top {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        .avatar {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            box-shadow: 0 0 22px rgba(168, 85, 247, 0.45);
+        }
+
+        .profile-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .profile-role {
+            font-size: 0.78rem;
+            color: var(--muted);
+            margin-top: 3px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 6px;
+            padding: 2px 9px;
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.67rem;
+            font-weight: 600;
+        }
+
+        .badge-green {
+            background: rgba(74, 222, 128, 0.1);
+            color: #4ade80;
+            border: 1px solid rgba(74, 222, 128, 0.22);
+        }
+
+        .info-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 7px 11px;
+            background: var(--item-bg);
+            border: 1px solid var(--border-soft);
+            border-radius: 5px;
+            font-size: 0.8rem;
+            transition: border-color 0.15s;
+        }
+
+        .info-row:hover {
+            border-color: var(--border);
+        }
+
+        .info-key {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.72rem;
+            color: var(--muted);
+        }
+
+        .info-val {
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .info-val.accent {
+            color: var(--purple);
+        }
+
+
+        /* ========== SKILLS PANEL ========== */
+        .skill-group {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.67rem;
+            color: var(--muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin: 13px 0 6px;
+        }
+
+        .skill-group:first-child {
+            margin-top: 0;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 11px;
+            background: var(--item-bg);
+            border: 1px solid var(--border-soft);
+            border-radius: 5px;
+            margin-bottom: 5px;
+            transition: all 0.15s;
+        }
+
+        .skill-item:hover {
+            background: var(--hover-bg);
+            border-color: var(--border);
+        }
+
+        .skill-name {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.78rem;
+            color: var(--text);
+            flex: 1;
+        }
+
+        .skill-bar {
+            width: 95px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .skill-num {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.67rem;
+            color: var(--purple);
+            width: 26px;
+            text-align: right;
+        }
+
+
+        /* ========== PROJECTS PANEL ========== */
+        .module {
+            border: 1px solid var(--border-soft);
+            border-radius: 5px;
+            margin-bottom: 6px;
+            overflow: hidden;
+            transition: border-color 0.15s;
+        }
+
+        .module:hover {
+            border-color: var(--border);
+        }
+
+        .module.open {
+            border-color: var(--purple-dim);
+        }
+
+        .module-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 12px;
+            cursor: pointer;
+            background: var(--item-bg);
+            transition: background 0.15s;
+        }
+
+        .module-head:hover {
+            background: var(--hover-bg);
+        }
+
+        .mod-toggle {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.58rem;
+            color: var(--purple);
+            flex-shrink: 0;
+            transition: all 0.15s;
+        }
+
+        .module.open .mod-toggle {
+            background: var(--gradient);
+            border-color: transparent;
+            color: #fff;
+        }
+
+        .mod-name {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text);
+            flex: 1;
+        }
+
+        .mod-tag {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.62rem;
+            color: var(--purple);
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.22);
+            padding: 1px 7px;
+            border-radius: 3px;
+        }
+
+        .module-body {
+            display: none;
+            padding: 10px 12px;
+            border-top: 1px solid var(--border-soft);
+            background: rgba(0, 0, 0, 0.25);
+        }
+
+        .module.open .module-body {
+            display: block;
+        }
+
+        .mod-desc {
+            font-size: 0.78rem;
+            color: var(--muted);
+            line-height: 1.55;
+            margin-bottom: 8px;
+        }
+
+        .mod-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .stack-chip {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.63rem;
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+
+
+        /* ========== CONTACT PANEL ========== */
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 13px;
+            background: var(--item-bg);
+            border: 1px solid var(--border-soft);
+            border-radius: 5px;
+            margin-bottom: 7px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.15s;
+        }
+
+        .contact-link:hover {
+            background: var(--hover-bg);
+            border-color: var(--purple);
+            color: var(--purple);
+        }
+
+        .contact-ico {
+            font-size: 1rem;
+            width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .contact-lbl {
+            font-size: 0.82rem;
+            font-weight: 500;
+            flex: 1;
+        }
+
+        .contact-val {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.7rem;
+            color: var(--muted);
+            transition: color 0.15s;
+        }
+
+        .contact-link:hover .contact-val {
+            color: var(--purple);
+        }
+
+
+        /* ========== STATUS BAR ========== */
+        .statusbar {
+            height: 26px;
+            background: var(--sidebar-bg);
+            border-top: 1px solid var(--border-soft);
+            display: flex;
+            align-items: center;
+            padding: 0 14px;
+            gap: 14px;
+            flex-shrink: 0;
+        }
+
+        .sb-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.62rem;
+            color: var(--muted);
+        }
+
+        .sb-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--purple);
+        }
+
+        .sb-sep {
+            width: 1px;
+            height: 11px;
+            background: var(--border-soft);
+        }
+
+        .sb-right {
+            margin-left: auto;
+        }
+
+    </style>
 </head>
 <body>
-<nav>
-<div class="logo">&lt;vajzii /&gt;</div>
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-<section id="hero">
-<p class="htag">// Hello, world 👋</p>
-<h1>I build things<br/>for the <span class="grad">web &amp; JVM</span></h1>
-<p>Full-stack developer &amp; Java specialist. I craft game modifications, backend services, browser extensions, and sleek frontends.</p>
-<div class="brow">
-<a href="#projects" class="btn bp">View Projects</a>
-<a href="#contact" class="btn bo">Get in Touch</a>
-</div>
-</section>
-<section id="about">
-<p class="lbl">// 01. About</p>
-<h2 class="ttl">Who am I?</h2>
-<div class="ag">
-<div class="at">
-<p>I'm a <strong>software developer</strong> passionate about building robust Java backends, game modifications, and browser tools that solve real problems.</p>
-<p>I enjoy working across the full stack — from low-level game rendering with <strong>OpenGL &amp; LWJGL3</strong> to deploying containerized services via <strong>Docker &amp; Cloudflare</strong>.</p>
-<p>Beyond coding, I have a background in <strong>academic research</strong> and a love for clean, readable code and elegant system architecture.</p>
-</div>
-<div class="sg">
-<div class="sc g"><div class="n">5+</div><div class="l">Years Coding</div></div>
-<div class="sc g"><div class="n">13+</div><div class="l">Projects Built</div></div>
-<div class="sc g"><div class="n">Java</div><div class="l">Primary Stack</div></div>
-<div class="sc g"><div class="n">EU</div><div class="l">Based In</div></div>
-</div>
-</div>
-</section>
-<section id="skills">
-<p class="lbl">// 02. Skills</p>
-<h2 class="ttl">Tech Stack</h2>
-<p class="sub">Technologies I use to take projects from idea to production.</p>
-<div class="kg">
-<div class="kc g"><h3><span class="ic">☕</span> Backend</h3><div class="ts"><span class="t tp">Java</span><span class="t tp">WebSocket</span><span class="t tp">REST API</span><span class="t tp">Maven</span><span class="t tp">Gradle</span></div></div>
-<div class="kc g"><h3><span class="ic">🌐</span> Frontend</h3><div class="ts"><span class="t tb">HTML5</span><span class="t tb">CSS3</span><span class="t tb">JavaScript</span><span class="t tb">Chrome Extensions</span></div></div>
-<div class="kc g"><h3><span class="ic">🐳</span> DevOps</h3><div class="ts"><span class="t tb">Docker</span><span class="t tb">GitHub Actions</span><span class="t tb">Linux</span><span class="t tb">Cloudflare</span></div></div>
-<div class="kc g"><h3><span class="ic">🎮</span> Game Dev</h3><div class="ts"><span class="t tp">Minecraft Mods</span><span class="t tp">Forge</span><span class="t tp">LWJGL3</span><span class="t tp">OpenGL</span></div></div>
-<div class="kc g"><h3><span class="ic">🐍</span> Scripting</h3><div class="ts"><span class="t tb">Python</span><span class="t tb">Bash</span><span class="t tb">Automation</span></div></div>
-<div class="kc g"><h3><span class="ic">🗄️</span> Tooling</h3><div class="ts"><span class="t tp">Git</span><span class="t tp">MySQL</span><span class="t tb">IntelliJ IDEA</span><span class="t tb">VS Code</span></div></div>
-</div>
-</section>
-<section id="projects">
-<p class="lbl">// 03. Projects</p>
-<h2 class="ttl">What I've Built</h2>
-<p class="sub">A selection of projects I'm proud of.</p>
-<div class="pg">
-<div class="pc g">
-<div class="pt"><div class="pi">🎮</div></div>
-<h3>Minecraft Client Mod</h3>
-<p>Custom Minecraft 1.8–1.21 client with modern LWJGL3 rendering, modular module system, and advanced networking.</p>
-<div class="ps"><span class="ptg">Java</span><span class="ptg">LWJGL3</span><span class="ptg">OpenGL</span><span class="ptg">Gradle</span></div>
-</div>
-<div class="pc g">
-<div class="pt"><div class="pi">🔌</div></div>
-<h3>Java WebSocket Server</h3>
-<p>Real-time backend with session auth, tunneled via Cloudflare and deployed inside Docker on a Linux VPS.</p>
-<div class="ps"><span class="ptg">Java</span><span class="ptg">WebSocket</span><span class="ptg">Docker</span><span class="ptg">Cloudflare</span></div>
-</div>
-<div class="pc g">
-<div class="pt"><div class="pi">🧩</div></div>
-<h3>Chrome Extension</h3>
-<p>Browser extension that automatically detects and opens specific links from a live chat stream.</p>
-<div class="ps"><span class="ptg">JavaScript</span><span class="ptg">Chrome API</span><span class="ptg">CSS</span></div>
-</div>
-<div class="pc g">
-<div class="pt"><div class="pi">🧠</div></div>
-<h3>Psychology Research</h3>
-<p>Academic experiment on caffeine's effect on working memory using the Digit Span test with full statistical analysis.</p>
-<div class="ps"><span class="ptg">Python</span><span class="ptg">Statistics</span><span class="ptg">APA 7</span></div>
-</div>
-<div class="pc g">
-<div class="pt"><div class="pi">🌐</div></div>
-<h3>Self-hosted Platform</h3>
-<p>Personal web platform with forum, REST API, and IRC — all behind a reverse proxy and Cloudflare Tunnel.</p>
-<div class="ps"><span class="ptg">Apache2</span><span class="ptg">MyBB</span><span class="ptg">Cloudflare</span><span class="ptg">Linux</span></div>
-</div>
-<div class="pc g">
-<div class="pt"><div class="pi">🚀</div></div>
-<h3>This Portfolio</h3>
-<p>Single-file HTML/CSS portfolio with glassmorphism design, hosted free on GitHub Pages with a custom domain.</p>
-<div class="ps"><span class="ptg">HTML5</span><span class="ptg">CSS3</span><span class="ptg">GitHub Pages</span></div>
-</div>
-</div>
-</section>
-<section id="contact">
-<p class="lbl">// 04. Contact</p>
-<h2 class="ttl">Get In Touch</h2>
-<p class="sub">Open to collaborations, freelance work, or just a chat about tech.</p>
-<div class="cr">
-<a href="https://github.com/vajzii" target="_blank" class="cc g">
-<svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.17c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02.01 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-github.com/vajzii
-</a>
-<a href="mailto:contact@vajzii.systems" class="cc g">
-<svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-contact@vajzii.systems
-</a>
-</div>
-</section>
-<footer>
-<p>&copy; 2026 <span class="mono">vajzii</span></p>
-<p class="mono">// built with ❤️ &amp; GitHub Pages</p>
-</footer>
+
+    <!-- Background -->
+    <div class="bg-grid"></div>
+    <div class="bg-orb-1"></div>
+    <div class="bg-orb-2"></div>
+    <div class="bg-watermark">vajzii.cfg // v2026</div>
+
+
+    <!-- Menu Window -->
+    <div class="menu" id="menu">
+
+        <!-- Title Bar -->
+        <div class="titlebar" id="titlebar">
+            <div class="title-dot"></div>
+            <span class="title-name">vajzii.cfg</span>
+            <span class="title-version">v2026.1</span>
+            <div class="title-status">
+                <div class="status-dot"></div>
+                online
+            </div>
+            <div class="win-btns">
+                <button class="win-btn" id="btn-min">_</button>
+            </div>
+        </div>
+
+        <!-- Body -->
+        <div class="menu-body" id="menu-body">
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-label">navigation</div>
+                <div class="tab active" data-tab="profile">
+                    <span class="tab-icon">👤</span> Profile
+                </div>
+                <div class="tab" data-tab="skills">
+                    <span class="tab-icon">⚡</span> Skills
+                </div>
+                <div class="tab" data-tab="projects">
+                    <span class="tab-icon">📦</span> Projects
+                </div>
+                <div class="tab" data-tab="contact">
+                    <span class="tab-icon">✉️</span> Contact
+                </div>
+                <div class="sidebar-spacer"></div>
+                <div class="sidebar-label">links</div>
+                <div class="tab" onclick="window.open('https://github.com/vajzii','_blank')">
+                    <span class="tab-icon">⯑</span> GitHub
+                </div>
+            </div>
+
+            <!-- Panels -->
+            <div class="content">
+
+                <!-- PROFILE -->
+                <div class="panel active" id="panel-profile">
+                    <div class="panel-header">
+                        <span class="panel-title">profile</span>
+                        <div class="panel-line"></div>
+                    </div>
+                    <div class="profile-top">
+                        <div class="avatar">⚡</div>
+                        <div>
+                            <div class="profile-name">vajzii</div>
+                            <div class="profile-role">Full-stack Developer &amp; Java Specialist</div>
+                            <span class="badge badge-green">● open to work</span>
+                        </div>
+                    </div>
+                    <div class="info-rows">
+                        <div class="info-row">
+                            <span class="info-key">experience</span>
+                            <span class="info-val">5+ years</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-key">primary_lang</span>
+                            <span class="info-val accent">Java</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-key">projects</span>
+                            <span class="info-val">13+ private repos</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-key">region</span>
+                            <span class="info-val">EU</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-key">focus</span>
+                            <span class="info-val">Backend · Game Dev · Research</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SKILLS -->
+                <div class="panel" id="panel-skills">
+                    <div class="panel-header">
+                        <span class="panel-title">skills</span>
+                        <div class="panel-line"></div>
+                    </div>
+                    <div class="skill-group">Backend</div>
+                    <div class="skill-item">
+                        <span class="skill-name">Java</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+                        <span class="skill-num">95</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">WebSocket</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+                        <span class="skill-num">88</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">REST API</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+                        <span class="skill-num">85</span>
+                    </div>
+                    <div class="skill-group">Game Dev</div>
+                    <div class="skill-item">
+                        <span class="skill-name">Minecraft Mods</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+                        <span class="skill-num">92</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">LWJGL3 / OpenGL</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width:73%"></div></div>
+                        <span class="skill-num">73</span>
+                    </div>
+                    <div class="skill-group">DevOps</div>
+                    <div class="skill-item">
+                        <span class="skill-name">Docker</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+                        <span class="skill-num">80</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Linux</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width:83%"></div></div>
+                        <span class="skill-num">83</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">GitHub Actions</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width:76%"></div></div>
+                        <span class="skill-num">76</span>
+                    </div>
+                    <div class="skill-group">Frontend</div>
+                    <div class="skill-item">
+                        <span class="skill-name">HTML / CSS</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width:87%"></div></div>
+                        <span class="skill-num">87</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">JavaScript</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width:79%"></div></div>
+                        <span class="skill-num">79</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Python</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div>
+                        <span class="skill-num">72</span>
+                    </div>
+                </div>
+
+                <!-- PROJECTS -->
+                <div class="panel" id="panel-projects">
+                    <div class="panel-header">
+                        <span class="panel-title">projects</span>
+                        <div class="panel-line"></div>
+                    </div>
+
+                    <div class="module" onclick="toggleModule(this)">
+                        <div class="module-head">
+                            <div class="mod-toggle">+</div>
+                            <span class="mod-name">Minecraft Client Mod</span>
+                            <span class="mod-tag">Java</span>
+                        </div>
+                        <div class="module-body">
+                            <p class="mod-desc">Custom Minecraft 1.8–1.21 client with LWJGL3 rendering, modular module system, and advanced networking.</p>
+                            <div class="mod-stack">
+                                <span class="stack-chip">Java</span>
+                                <span class="stack-chip">LWJGL3</span>
+                                <span class="stack-chip">OpenGL</span>
+                                <span class="stack-chip">Gradle</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module" onclick="toggleModule(this)">
+                        <div class="module-head">
+                            <div class="mod-toggle">+</div>
+                            <span class="mod-name">Java WebSocket Server</span>
+                            <span class="mod-tag">Backend</span>
+                        </div>
+                        <div class="module-body">
+                            <p class="mod-desc">Real-time backend with session auth, deployed in Docker and tunneled through Cloudflare on a Linux VPS.</p>
+                            <div class="mod-stack">
+                                <span class="stack-chip">Java</span>
+                                <span class="stack-chip">WebSocket</span>
+                                <span class="stack-chip">Docker</span>
+                                <span class="stack-chip">Cloudflare</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module" onclick="toggleModule(this)">
+                        <div class="module-head">
+                            <div class="mod-toggle">+</div>
+                            <span class="mod-name">Chrome Extension</span>
+                            <span class="mod-tag">JS</span>
+                        </div>
+                        <div class="module-body">
+                            <p class="mod-desc">Browser extension that automatically detects and opens specific links from a live chat stream.</p>
+                            <div class="mod-stack">
+                                <span class="stack-chip">JavaScript</span>
+                                <span class="stack-chip">Chrome API</span>
+                                <span class="stack-chip">CSS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module" onclick="toggleModule(this)">
+                        <div class="module-head">
+                            <div class="mod-toggle">+</div>
+                            <span class="mod-name">Self-hosted Platform</span>
+                            <span class="mod-tag">Linux</span>
+                        </div>
+                        <div class="module-body">
+                            <p class="mod-desc">Web platform with forum, REST API, and IRC — all behind a reverse proxy and Cloudflare Tunnel.</p>
+                            <div class="mod-stack">
+                                <span class="stack-chip">Apache2</span>
+                                <span class="stack-chip">MyBB</span>
+                                <span class="stack-chip">Cloudflare</span>
+                                <span class="stack-chip">Linux</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module" onclick="toggleModule(this)">
+                        <div class="module-head">
+                            <div class="mod-toggle">+</div>
+                            <span class="mod-name">Psychology Research</span>
+                            <span class="mod-tag">Python</span>
+                        </div>
+                        <div class="module-body">
+                            <p class="mod-desc">Academic study on caffeine's effect on working memory (Digit Span) with full statistical analysis in APA 7.</p>
+                            <div class="mod-stack">
+                                <span class="stack-chip">Python</span>
+                                <span class="stack-chip">Statistics</span>
+                                <span class="stack-chip">APA 7</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module open" onclick="toggleModule(this)">
+                        <div class="module-head">
+                            <div class="mod-toggle">✓</div>
+                            <span class="mod-name">This Portfolio</span>
+                            <span class="mod-tag">HTML</span>
+                        </div>
+                        <div class="module-body">
+                            <p class="mod-desc">CS2-style draggable menu portfolio — pure HTML/CSS/JS, hosted free on GitHub Pages with a custom domain.</p>
+                            <div class="mod-stack">
+                                <span class="stack-chip">HTML5</span>
+                                <span class="stack-chip">CSS3</span>
+                                <span class="stack-chip">JavaScript</span>
+                                <span class="stack-chip">GitHub Pages</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTACT -->
+                <div class="panel" id="panel-contact">
+                    <div class="panel-header">
+                        <span class="panel-title">contact</span>
+                        <div class="panel-line"></div>
+                    </div>
+                    <a href="https://github.com/vajzii" target="_blank" class="contact-link">
+                        <span class="contact-ico">⯑</span>
+                        <span class="contact-lbl">GitHub</span>
+                        <span class="contact-val">github.com/vajzii</span>
+                    </a>
+                    <a href="mailto:contact@vajzii.systems" class="contact-link">
+                        <span class="contact-ico">✉</span>
+                        <span class="contact-lbl">Email</span>
+                        <span class="contact-val">contact@vajzii.systems</span>
+                    </a>
+                    <a href="https://vajzii.systems" target="_blank" class="contact-link">
+                        <span class="contact-ico">🌐</span>
+                        <span class="contact-lbl">Website</span>
+                        <span class="contact-val">vajzii.systems</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="statusbar" id="statusbar">
+            <div class="sb-item"><div class="sb-dot"></div> vajzii.cfg</div>
+            <div class="sb-sep"></div>
+            <div class="sb-item">Full-stack Developer</div>
+            <div class="sb-item sb-right">&copy; 2026 vajzii</div>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // ========== DRAGGING ==========
+        const menu     = document.getElementById('menu');
+        const titlebar = document.getElementById('titlebar');
+
+        let dragging = false;
+        let offsetX  = 0;
+        let offsetY  = 0;
+
+        // Convert from CSS transform center to explicit pixel position
+        window.addEventListener('load', () => {
+            const r = menu.getBoundingClientRect();
+            menu.style.transform = 'none';
+            menu.style.top  = r.top  + 'px';
+            menu.style.left = r.left + 'px';
+        });
+
+        titlebar.addEventListener('mousedown', (e) => {
+            if (e.target.classList.contains('win-btn')) return;
+            dragging = true;
+            const r = menu.getBoundingClientRect();
+            offsetX  = e.clientX - r.left;
+            offsetY  = e.clientY - r.top;
+            menu.style.transition = 'height 0.22s ease';
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!dragging) return;
+            let x = e.clientX - offsetX;
+            let y = e.clientY - offsetY;
+            x = Math.max(0, Math.min(window.innerWidth  - menu.offsetWidth,  x));
+            y = Math.max(0, Math.min(window.innerHeight - menu.offsetHeight, y));
+            menu.style.left = x + 'px';
+            menu.style.top  = y + 'px';
+        });
+
+        document.addEventListener('mouseup', () => {
+            dragging = false;
+        });
+
+
+        // ========== TAB SWITCHING ==========
+        const tabs   = document.querySelectorAll('.tab[data-tab]');
+        const panels = document.querySelectorAll('.panel');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t   => t.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+            });
+        });
+
+
+        // ========== MINIMIZE ==========
+        const btnMin    = document.getElementById('btn-min');
+        const menuBody  = document.getElementById('menu-body');
+        const statusbar = document.getElementById('statusbar');
+        let   minimized = false;
+
+        btnMin.addEventListener('click', () => {
+            minimized = !minimized;
+            menu.classList.toggle('collapsed', minimized);
+            menuBody.style.display  = minimized ? 'none' : 'flex';
+            statusbar.style.display = minimized ? 'none' : 'flex';
+            btnMin.textContent      = minimized ? '▢' : '_';
+        });
+
+
+        // ========== PROJECT MODULE TOGGLE ==========
+        function toggleModule(el) {
+            const wasOpen = el.classList.contains('open');
+            el.classList.toggle('open', !wasOpen);
+            el.querySelector('.mod-toggle').textContent = wasOpen ? '+' : '✓';
+        }
+
+    </script>
+
 </body>
 </html>
