@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>vajzii — Developer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+--p:#c4b5fd;
+--p2:#a78bfa;
+--p3:#7c3aed;
+--b:#bfdbfe;
+--b2:#93c5fd;
+--b3:#3b82f6;
+--gb:rgba(255,255,255,0.07);
+--gbd:rgba(255,255,255,0.13);
+--gbr:rgba(255,255,255,0.14);
+--txt:#f0f0ff;
+--m:rgba(220,215,255,0.58);
+--r:15px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+font-family:'Inter',sans-serif;
+color:var(--txt);
+line-height:1.6;
+background:linear-gradient(135deg,#1a0533 0%,#0f1a4a 35%,#0a1628 65%,#1a0533 100%);
+background-attachment:fixed;
+overflow-x:hidden;
+}
+body::before{
+content:'';
+position:fixed;top:-20%;left:-10%;
+width:60vw;height:60vw;
+background:radial-gradient(circle,rgba(167,139,250,.18) 0%,transparent 65%);
+pointer-events:none;z-index:0;
+animation:orb 9s ease-in-out infinite;
+}
+body::after{
+content:'';
+position:fixed;bottom:-20%;right:-10%;
+width:55vw;height:55vw;
+background:radial-gradient(circle,rgba(147,197,253,.14) 0%,transparent 65%);
+pointer-events:none;z-index:0;
+animation:orb 11s ease-in-out infinite reverse;
+}
+@keyframes orb{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-28px) scale(1.04)}}
+nav{
+position:fixed;top:0;left:0;right:0;z-index:100;
+display:flex;justify-content:space-between;align-items:center;
+padding:1rem 7%;
+background:rgba(12,8,32,.6);
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+.logo{
+font-family:'Fira Code',monospace;
+font-size:1.05rem;font-weight:500;
+background:linear-gradient(90deg,var(--p),var(--b));
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+nav ul{list-style:none;display:flex;gap:2rem}
+nav ul a{color:var(--m);text-decoration:none;font-size:.87rem;font-weight:500;transition:color .2s}
+nav ul a:hover{color:var(--txt)}
+section{position:relative;z-index:1;padding:6rem 8%}
+.lbl{
+font-family:'Fira Code',monospace;font-size:.8rem;
+color:var(--p);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem;
+}
+.ttl{font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:700;letter-spacing:-.02em;margin-bottom:.8rem}
+.sub{color:var(--m);max-width:540px;margin-bottom:2.5rem;font-size:.93rem}
+.g{
+background:var(--gb);
+border:1px solid rgba(255,255,255,.13);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+border-radius:var(--r);
+}
+.g:hover{background:var(--gbd);border-color:rgba(196,181,253,.3)}
+#hero{
+min-height:100vh;
+display:flex;flex-direction:column;
+justify-content:center;align-items:flex-start;
+}
+.htag{
+font-family:'Fira Code',monospace;font-size:.87rem;
+color:var(--b);margin-bottom:1rem;letter-spacing:.04em;
+}
+#hero h1{
+font-size:clamp(2.6rem,6vw,5rem);
+font-weight:800;line-height:1.08;letter-spacing:-.03em;margin-bottom:1.2rem;
+}
+.grad{
+background:linear-gradient(100deg,var(--p) 0%,var(--b2) 100%);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+#hero p{font-size:1.08rem;color:var(--m);max-width:500px;margin-bottom:2rem}
+.brow{display:flex;gap:.9rem;flex-wrap:wrap}
+.btn{
+padding:.72rem 1.7rem;border-radius:10px;
+font-size:.88rem;font-weight:600;text-decoration:none;
+transition:all .22s;cursor:pointer;display:inline-block;
+}
+.bp{
+background:linear-gradient(135deg,var(--p3),var(--b3));
+color:#fff;border:none;
+box-shadow:0 4px 20px rgba(124,58,237,.35);
+}
+.bp:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(124,58,237,.5)}
+.bo{
+background:var(--gb);color:var(--txt);
+border:1px solid rgba(255,255,255,.13);
+backdrop-filter:blur(10px);
+}
+.bo:hover{border-color:var(--p);color:var(--p);transform:translateY(-2px)}
+.ag{
+display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;
+}
+.at p{color:var(--m);margin-bottom:.9rem;font-size:.93rem}
+.at p strong{color:var(--txt)}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.sc{
+padding:1.4rem;text-align:center;
+transition:all .22s;
+}
+.sc .n{
+font-size:1.85rem;font-weight:800;
+background:linear-gradient(90deg,var(--p),var(--b2));
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.sc .l{font-size:.76rem;color:var(--m);margin-top:.2rem}
+.kg{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.2rem}
+.kc{padding:1.5rem;transition:all .22s}
+.kc h3{font-size:.93rem;font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:.55rem}
+.ic{font-size:1.2rem}
+.ts{display:flex;flex-wrap:wrap;gap:.45rem}
+.t{
+font-family:'Fira Code',monospace;font-size:.7rem;
+padding:.22rem .6rem;border-radius:6px;border:1px solid;
+}
+.tp{color:var(--p);background:rgba(196,181,253,.1);border-color:rgba(196,181,253,.22)}
+.tb{color:var(--b);background:rgba(147,197,253,.09);border-color:rgba(147,197,253,.2)}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(295px,1fr));gap:1.3rem}
+.pc{
+padding:1.7rem;display:flex;flex-direction:column;
+transition:all .22s;
+}
+.pc:hover{transform:translateY(-5px)}
+.pt{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem}
+.pi{font-size:1.85rem}
+.pc h3{font-size:.98rem;font-weight:600;margin-bottom:.45rem}
+.pc p{color:var(--m);font-size:.87rem;flex-grow:1;margin-bottom:1.2rem}
+.ps{display:flex;flex-wrap:wrap;gap:.4rem}
+.ptg{
+font-family:'Fira Code',monospace;font-size:.68rem;
+color:var(--m);background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.09);
+padding:.18rem .5rem;border-radius:5px;
+}
+#contact{text-align:center}
+#contact .sub{margin:0 auto 2.5rem}
+.cr{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+.cc{
+padding:.85rem 1.8rem;text-decoration:none;color:var(--txt);
+font-weight:500;font-size:.88rem;
+display:flex;align-items:center;gap:.6rem;
+transition:all .22s;
+}
+.cc:hover{color:var(--p);transform:translateY(-3px);border-color:rgba(196,181,253,.35)}
+footer{
+position:relative;z-index:1;
+border-top:1px solid rgba(255,255,255,.1);
+padding:1.8rem 8%;
+display:flex;justify-content:space-between;align-items:center;
+flex-wrap:wrap;gap:1rem;
+}
+footer p{color:var(--m);font-size:.8rem}
+.mono{font-family:'Fira Code',monospace;color:var(--p)}
+@media(max-width:768px){
+nav ul{display:none}
+section{padding:4.5rem 5%}
+.ag{grid-template-columns:1fr}
+footer{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo">&lt;vajzii /&gt;</div>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<section id="hero">
+<p class="htag">// Hello, world 👋</p>
+<h1>I build things<br/>for the <span class="grad">web &amp; JVM</span></h1>
+<p>Full-stack developer &amp; Java specialist. I craft game modifications, backend services, browser extensions, and sleek frontends.</p>
+<div class="brow">
+<a href="#projects" class="btn bp">View Projects</a>
+<a href="#contact" class="btn bo">Get in Touch</a>
+</div>
+</section>
+<section id="about">
+<p class="lbl">// 01. About</p>
+<h2 class="ttl">Who am I?</h2>
+<div class="ag">
+<div class="at">
+<p>I'm a <strong>software developer</strong> passionate about building robust Java backends, game modifications, and browser tools that solve real problems.</p>
+<p>I enjoy working across the full stack — from low-level game rendering with <strong>OpenGL &amp; LWJGL3</strong> to deploying containerized services via <strong>Docker &amp; Cloudflare</strong>.</p>
+<p>Beyond coding, I have a background in <strong>academic research</strong> and a love for clean, readable code and elegant system architecture.</p>
+</div>
+<div class="sg">
+<div class="sc g"><div class="n">5+</div><div class="l">Years Coding</div></div>
+<div class="sc g"><div class="n">13+</div><div class="l">Projects Built</div></div>
+<div class="sc g"><div class="n">Java</div><div class="l">Primary Stack</div></div>
+<div class="sc g"><div class="n">EU</div><div class="l">Based In</div></div>
+</div>
+</div>
+</section>
+<section id="skills">
+<p class="lbl">// 02. Skills</p>
+<h2 class="ttl">Tech Stack</h2>
+<p class="sub">Technologies I use to take projects from idea to production.</p>
+<div class="kg">
+<div class="kc g"><h3><span class="ic">☕</span> Backend</h3><div class="ts"><span class="t tp">Java</span><span class="t tp">WebSocket</span><span class="t tp">REST API</span><span class="t tp">Maven</span><span class="t tp">Gradle</span></div></div>
+<div class="kc g"><h3><span class="ic">🌐</span> Frontend</h3><div class="ts"><span class="t tb">HTML5</span><span class="t tb">CSS3</span><span class="t tb">JavaScript</span><span class="t tb">Chrome Extensions</span></div></div>
+<div class="kc g"><h3><span class="ic">🐳</span> DevOps</h3><div class="ts"><span class="t tb">Docker</span><span class="t tb">GitHub Actions</span><span class="t tb">Linux</span><span class="t tb">Cloudflare</span></div></div>
+<div class="kc g"><h3><span class="ic">🎮</span> Game Dev</h3><div class="ts"><span class="t tp">Minecraft Mods</span><span class="t tp">Forge</span><span class="t tp">LWJGL3</span><span class="t tp">OpenGL</span></div></div>
+<div class="kc g"><h3><span class="ic">🐍</span> Scripting</h3><div class="ts"><span class="t tb">Python</span><span class="t tb">Bash</span><span class="t tb">Automation</span></div></div>
+<div class="kc g"><h3><span class="ic">🗄️</span> Tooling</h3><div class="ts"><span class="t tp">Git</span><span class="t tp">MySQL</span><span class="t tb">IntelliJ IDEA</span><span class="t tb">VS Code</span></div></div>
+</div>
+</section>
+<section id="projects">
+<p class="lbl">// 03. Projects</p>
+<h2 class="ttl">What I've Built</h2>
+<p class="sub">A selection of projects I'm proud of.</p>
+<div class="pg">
+<div class="pc g">
+<div class="pt"><div class="pi">🎮</div></div>
+<h3>Minecraft Client Mod</h3>
+<p>Custom Minecraft 1.8–1.21 client with modern LWJGL3 rendering, modular module system, and advanced networking.</p>
+<div class="ps"><span class="ptg">Java</span><span class="ptg">LWJGL3</span><span class="ptg">OpenGL</span><span class="ptg">Gradle</span></div>
+</div>
+<div class="pc g">
+<div class="pt"><div class="pi">🔌</div></div>
+<h3>Java WebSocket Server</h3>
+<p>Real-time backend with session auth, tunneled via Cloudflare and deployed inside Docker on a Linux VPS.</p>
+<div class="ps"><span class="ptg">Java</span><span class="ptg">WebSocket</span><span class="ptg">Docker</span><span class="ptg">Cloudflare</span></div>
+</div>
+<div class="pc g">
+<div class="pt"><div class="pi">🧩</div></div>
+<h3>Chrome Extension</h3>
+<p>Browser extension that automatically detects and opens specific links from a live chat stream.</p>
+<div class="ps"><span class="ptg">JavaScript</span><span class="ptg">Chrome API</span><span class="ptg">CSS</span></div>
+</div>
+<div class="pc g">
+<div class="pt"><div class="pi">🧠</div></div>
+<h3>Psychology Research</h3>
+<p>Academic experiment on caffeine's effect on working memory using the Digit Span test with full statistical analysis.</p>
+<div class="ps"><span class="ptg">Python</span><span class="ptg">Statistics</span><span class="ptg">APA 7</span></div>
+</div>
+<div class="pc g">
+<div class="pt"><div class="pi">🌐</div></div>
+<h3>Self-hosted Platform</h3>
+<p>Personal web platform with forum, REST API, and IRC — all behind a reverse proxy and Cloudflare Tunnel.</p>
+<div class="ps"><span class="ptg">Apache2</span><span class="ptg">MyBB</span><span class="ptg">Cloudflare</span><span class="ptg">Linux</span></div>
+</div>
+<div class="pc g">
+<div class="pt"><div class="pi">🚀</div></div>
+<h3>This Portfolio</h3>
+<p>Single-file HTML/CSS portfolio with glassmorphism design, hosted free on GitHub Pages with a custom domain.</p>
+<div class="ps"><span class="ptg">HTML5</span><span class="ptg">CSS3</span><span class="ptg">GitHub Pages</span></div>
+</div>
+</div>
+</section>
+<section id="contact">
+<p class="lbl">// 04. Contact</p>
+<h2 class="ttl">Get In Touch</h2>
+<p class="sub">Open to collaborations, freelance work, or just a chat about tech.</p>
+<div class="cr">
+<a href="https://github.com/vajzii" target="_blank" class="cc g">
+<svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.17c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02.01 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+github.com/vajzii
+</a>
+<a href="mailto:contact@vajzii.systems" class="cc g">
+<svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+contact@vajzii.systems
+</a>
+</div>
+</section>
+<footer>
+<p>&copy; 2026 <span class="mono">vajzii</span></p>
+<p class="mono">// built with ❤️ &amp; GitHub Pages</p>
+</footer>
+</body>
+</html>
