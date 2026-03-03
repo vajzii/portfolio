@@ -67,7 +67,6 @@ window.addEventListener('resize', () => {
 const tabs   = document.querySelectorAll('.tab[data-tab]');
 const panels = document.querySelectorAll('.panel');
 const sidebar = document.getElementById('sidebar');
-const overlay = document.getElementById('mobile-overlay');
 
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -75,7 +74,7 @@ tabs.forEach(tab => {
         panels.forEach(p => p.classList.remove('active'));
         tab.classList.add('active');
         document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
-        
+
         // Close mobile menu if open when tab is clicked
         if (isMobile() && sidebar.classList.contains('open')) {
             closeMobileMenu();
@@ -112,20 +111,11 @@ const menuToggle = document.getElementById('menu-toggle');
 
 function openMobileMenu() {
     sidebar.classList.add('open');
-    overlay.style.display = 'block';
-    // Small timeout to allow display:block to apply before changing opacity
-    setTimeout(() => {
-        overlay.style.opacity = '1';
-    }, 10);
-    document.body.style.overflow = 'hidden'; // Prevent scrolling background
+    document.body.style.overflow = 'hidden';
 }
 
 function closeMobileMenu() {
     sidebar.classList.remove('open');
-    overlay.style.opacity = '0';
-    setTimeout(() => {
-        overlay.style.display = 'none';
-    }, 300); // match CSS transition duration
     document.body.style.overflow = '';
 }
 
@@ -136,5 +126,3 @@ menuToggle.addEventListener('click', () => {
         openMobileMenu();
     }
 });
-
-overlay.addEventListener('click', closeMobileMenu);

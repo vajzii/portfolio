@@ -147,22 +147,6 @@
                         <div class="skill-bar-container"><div class="skill-fill" style="width:73%"></div></div>
                         <span class="skill-num">73</span>
                     </div>
-                    <div class="skill-group">DevOps</div>
-                    <div class="skill-item">
-                        <span class="skill-name">Docker</span>
-                        <div class="skill-bar-container"><div class="skill-fill" style="width:80%"></div></div>
-                        <span class="skill-num">80</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Linux</span>
-                        <div class="skill-bar-container"><div class="skill-fill" style="width:83%"></div></div>
-                        <span class="skill-num">83</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">GitHub Actions</span>
-                        <div class="skill-bar-container"><div class="skill-fill" style="width:76%"></div></div>
-                        <span class="skill-num">76</span>
-                    </div>
                     <div class="skill-group">Frontend</div>
                     <div class="skill-item">
                         <span class="skill-name">HTML / CSS</span>
@@ -178,6 +162,22 @@
                         <span class="skill-name">Python</span>
                         <div class="skill-bar-container"><div class="skill-fill" style="width:72%"></div></div>
                         <span class="skill-num">72</span>
+                    </div>
+                    <div class="skill-group">Mobile</div>
+                    <div class="skill-item">
+                        <span class="skill-name">React Native</span>
+                        <div class="skill-bar-container"><div class="skill-fill" style="width:70%"></div></div>
+                        <span class="skill-num">70</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">TypeScript</span>
+                        <div class="skill-bar-container"><div class="skill-fill" style="width:74%"></div></div>
+                        <span class="skill-num">74</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Expo</span>
+                        <div class="skill-bar-container"><div class="skill-fill" style="width:68%"></div></div>
+                        <span class="skill-num">68</span>
                     </div>
                 </div>
 
@@ -254,7 +254,24 @@
                             </div>
                         </div>
                     </div>
-                    
+
+                    <div class="module" onclick="toggleModule(this)">
+                        <div class="module-head">
+                            <div class="mod-toggle">+</div>
+                            <span class="mod-name">Tourist Map</span>
+                            <span class="mod-tag">React Native</span>
+                        </div>
+                        <div class="module-body">
+                            <p class="mod-desc">Mobile tourist map app with GPS location tracking, interactive maps, and local SQLite storage — built with Expo and a custom backend.</p>
+                            <div class="mod-stack">
+                                <span class="stack-chip">React Native</span>
+                                <span class="stack-chip">TypeScript</span>
+                                <span class="stack-chip">Expo</span>
+                                <span class="stack-chip">SQLite</span>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="module open" onclick="toggleModule(this)">
                         <div class="module-head">
                             <div class="mod-toggle">✓</div>
@@ -328,9 +345,6 @@
         </div>
 
     </div>
-
-    <!-- Mobile Overlay -->
-    <div class="mobile-overlay" id="mobile-overlay"></div>
 
     <script src="js/script.js"></script>
 </body>
